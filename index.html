@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek T L | Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Swiper CSS for Image Slider -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --bg-light: #f0f2f5;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.1);
+            --hero-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --primary-color: #3d8bfd;
+            --secondary-color: #adb5bd;
+            --dark-color: #121212;
+            --light-color: #343a40;
+            --bg-light: #1e2125;
+            --text-color: #f8f9fa;
+            --card-bg: #2c3034;
+            --card-border: rgba(255, 255, 255, 0.1);
+            --hero-bg: linear-gradient(135deg, #121212 0%, #2c3034 100%);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            transition: all 0.3s ease;
+        }
+        
+        section {
+            padding: 6rem 0;
+        }
+        
+        .bg-light-subtle {
+            background-color: var(--bg-light);
+            transition: all 0.3s ease;
+        }
+        
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+        
+        .custom-shadow {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Navbar animation */
+        .navbar {
+            transition: all 0.3s ease;
+            background-color: var(--card-bg) !important;
+        }
+        
+        .navbar-scrolled {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-color);
+        }
+        
+        /* Hero section */
+        #hero {
+            padding-top: 8rem;
+            padding-bottom: 6rem;
+            background: var(--hero-bg);
+        }
+        
+        /* Portfolio items */
+        .portfolio-item {
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+            background-color: var(--card-bg);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Skills progress */
+        .progress {
+            height: 10px;
+            margin-bottom: 25px;
+            background-color: var(--light-color);
+        }
+        
+        /* Contact form */
+        .contact-form .form-control {
+            border-radius: 0;
+            padding: 12px 15px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border-color: var(--card-border);
+        }
+        
+        /* Card styles */
+        .card {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+        }
+        
+        /* Theme toggle */
+        .theme-toggle {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Animation utilities */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s ease;
+        }
+        
+        .animate-on-scroll.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Swiper slider styles */
+        .swiper {
+            width: 100%;
+            height: 350px;
+            margin-bottom: 15px;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .swiper-pagination-bullet {
+            background: var(--primary-color);
+        }
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-theme="light">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Abhishek T L</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Abhishek T L</h1>
+                    <p class="lead mb-4">Web Developer | UX Designer | Digital Innovator</p>
+                    <p class="mb-5">I create elegant solutions to complex problems through code and design.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#portfolio" class="btn btn-primary btn-lg px-4">View My Work</a>
+                        <a href="#contact" class="btn btn-outline-dark btn-lg px-4">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light-subtle">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2 class="fw-bold mb-4">About Me</h2>
+                    <p class="lead">Passionate web developer with a keen eye for design and a commitment to creating seamless user experiences.</p>
+                    <p class="mb-4">I'm a full-stack developer with expertise in front-end technologies like HTML5, CSS3, JavaScript, and frameworks like React and Bootstrap. On the back-end, I'm proficient with Node.js, Express, and various database systems. My approach combines technical expertise with creative problem-solving to build applications that are both functional and visually appealing.</p>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-person-fill me-2 text-primary"></i> <strong>Name:</strong> Abhishek T L</li>
+                                <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-primary"></i> <strong>Location:</strong> Tarikere, Chikkagaluru, Karnataka, India</li>
+                                <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-primary"></i> <strong>Email:</strong> abhishek.09tke@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-phone-fill me-2 text-primary"></i> <strong>Phone:</strong> +91 78996 56692</li>
+                                <li class="mb-2"><i class="bi bi-translate me-2 text-primary"></i> <strong>Languages:</strong> English, Kannada, Hindi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-dark">Download CV</a>
+                        <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Services I Offer</h2>
+                    <p class="lead">I provide comprehensive solutions across the full web development lifecycle</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 custom-shadow p-4">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-laptop text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Web Development</h4>
+                            <p class="card-text">Creating responsive, user-friendly websites that align with client requirements and industry standards.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 custom-shadow p-4">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-code-square text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Frontend Development</h4>
+                            <p class="card-text">Building interactive user interfaces with modern JavaScript frameworks like React and Vue.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 custom-shadow p-4">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-server text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Backend Development</h4>
+                            <p class="card-text">Developing robust server-side applications with Node.js, Express, and various databases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-light-subtle">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">My Recent Work</h2>
+                    <p class="lead">Here are some projects I've worked on recently</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6">
+                    <div class="card portfolio-item border-0 overflow-hidden">
+                        <!-- Swiper Slider -->
+                        <div class="swiper mySwiper1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://ibb.co/ZRYmRbBB" alt="Attendance System Screenshot 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://ibb.co/ZRYmRbBB" alt="Attendance System Screenshot 2">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/api/placeholder/500/350" alt="Attendance System Screenshot 3">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/api/placeholder/500/350" alt="Attendance System Screenshot 4">
+                                </div>
+                            
+                                <div class="swiper-slide">
+                                    <img src="/api/placeholder/500/350" alt="Attendance System Screenshot 5">
+                                </div>
+                            
+                                <div class="swiper-slide">
+                                    <img src="/api/placeholder/500/350" alt="Attendance System Screenshot 6">
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Attendance System Using Face Recognition</h5>
+                            <p class="card-text">The system enables automated attendance tracking using facial recognition technology, making attendance management efficient and reliable.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary">Django-Web Framework</span>
+                                <span class="badge bg-secondary">HTML5/CSS3/Bootstrap5</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">Python</span>
+                                <span class="badge bg-info">MySQL</span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-6">
+                    <div class="card portfolio-item border-0 overflow-hidden">
+                        <!-- Swiper Slider -->
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/api/placeholder/500/350" alt="Portfolio Website Screenshot 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/api/placeholder/500/350" alt="Portfolio Website Screenshot 2">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/api/placeholder/500/350" alt="Portfolio Website Screenshot 3">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Personal Portfolio Website</h5>
+                            <p class="card-text">A professional website to showcase my technical skills, projects, and experience in web development.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary">HTML/CSS</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-info">Bootstrap</span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Technical Skills</h2>
+                    <p class="lead">My proficiency in various technologies</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">HTML5/CSS3</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">JavaScript/TypeScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Django</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Python</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">MySQL/SQL</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                   </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-light-subtle">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Work Experience</h2>
+                    <p class="lead">My professional journey</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="timeline">
+                        <!-- Experience 1 -->
+                        <div class="card mb-4 border-0 custom-shadow">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="card-title fw-bold">Full Stack Developer</h5>
+                                    <span class="badge bg-primary">2025</span>
+                                </div>
+                                <h6 class="text-muted mb-3">College Project</h6>
+                                <p class="card-text">Leading the frontend development team in building enterprise-level web applications. Implementing best practices for code quality and performance optimization.</p>
+                                <ul class="mt-3">
+                                    <li>Developed and maintained multiple React-based applications</li>
+                                    <li>Implemented responsive design principles across all projects</li>
+                                    <li>Mentored junior developers and conducted code reviews</li>
+                                    <li>Collaborated with UX designers to implement user-friendly interfaces</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Get In Touch</h2>
+                    <p class="lead">Let's discuss your project requirements</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <div class="card border-0 custom-shadow h-100">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Contact Information</h4>
+                            <ul class="list-unstyled">
+                                <li class="d-flex mb-4">
+                                    <i class="bi bi-geo-alt-fill text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Location</h6>
+                                        <p class="mb-0">Tarikere, Karnataka, India 560001</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex mb-4">
+                                    <i class="bi bi-envelope-fill text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Email</h6>
+                                        <p class="mb-0">abhishek.09tke@gmail.com</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex mb-4">
+                                    <i class="bi bi-phone-fill text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Phone</h6>
+                                        <p class="mb-0">+91 78996 56692</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <h5 class="mt-5 mb-3">Connect With Me</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="text-primary fs-4"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary fs-4"><i class="bi bi-github"></i></a>
+                                <a href="#" class="text-primary fs-4"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="text-primary fs-4"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-7">
+                    <div class="card border-0 custom-shadow">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Send Message</h4>
+                            <form id="contactForm" class="contact-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-3">
+                                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary px-4" id="submitBtn">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="formResponse" class="mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white">
+        <div class="container">
+            <p class="mb-0">© 2025 Abhishek T L. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+    <!-- EmailJS for contact form -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Initialize EmailJS with your user ID
+        (function() {
+            emailjs.init('YOUR_EMAILJS_USER_ID'); // Replace with your EmailJS user ID
+        })();
+
+        // Theme Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const lightIcon = document.getElementById('light-icon');
+            const darkIcon = document.getElementById('dark-icon');
+            const body = document.body;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            body.setAttribute('data-theme', savedTheme);
+            
+            // Update icons based on current theme
+            if (savedTheme === 'dark') {
+                lightIcon.classList.add('d-none');
+                darkIcon.classList.remove('d-none');
+            } else {
+                lightIcon.classList.remove('d-none');
+                darkIcon.classList.add('d-none');
+            }
+            
+            // Theme toggle click handler
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                // Update theme
+                body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                // Toggle icons
+                if (newTheme === 'dark') {
+                    lightIcon.classList.add('d-none');
+                    darkIcon.classList.remove('d-none');
+                } else {
+                    lightIcon.classList.remove('d-none');
+                    darkIcon.classList.add('d-none');
+                }
+            });
+
+            // Initialize Swiper sliders
+            const swiper1 = new Swiper('.mySwiper1', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            const swiper2 = new Swiper('.mySwiper2', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formResponse = document.getElementById('formResponse');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Change button text and disable it
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+                
+                // Send email using EmailJS
+                emailjs.sendForm('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', this)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        formResponse.innerHTML = '<div class="alert alert-success">Message sent successfully!</div>';
+                        contactForm.reset();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        formResponse.innerHTML = '<div class="alert alert-danger">Failed to send message. Please try again later.</div>';
+                    })
+                    .finally(function() {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'Send Message';
+                        
+                        // Remove response message after 5 seconds
+                        setTimeout(() => {
+                            formResponse.innerHTML = '';
+                        }, 5000);
+                    });
+            });
+
+            // Scroll animation for sections
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animateElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

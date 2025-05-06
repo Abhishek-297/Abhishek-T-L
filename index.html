@@ -691,6 +691,45 @@ Let’s connect and create something great together!</p>
                 }
             });
         });
+document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the first swiper
+            const swiper1 = new Swiper(".mySwiper1", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: ".mySwiper1 .swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".mySwiper1 .swiper-button-next",
+                    prevEl: ".mySwiper1 .swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+            });
+
+            // Initialize the second swiper
+            const swiper2 = new Swiper(".mySwiper2", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: ".mySwiper2 .swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".mySwiper2 .swiper-button-next",
+                    prevEl: ".mySwiper2 .swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+            });
+        });
     </script>
 </body>
 </html>

@@ -172,6 +172,36 @@
         .swiper-button-prev {
             color: var(--primary-color);
         }
+.portfolio-item {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        .swiper {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px 10px 0 0;
+            overflow: hidden;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-pagination-bullet-active {
+            background: #0d6efd;
+        }
+        .swiper-button-next, 
+        .swiper-button-prev {
+            color: #0d6efd;
+        }
+        .badge {
+            font-weight: 500;
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-theme="light">
@@ -268,15 +298,8 @@ Let’s connect and create something great together!</p>
     
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-light-subtle">
+   <section id="portfolio" class="py-5">
         <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold mb-3">My Recent Work</h2>
-                    <p class="lead">Here are some projects I've worked on recently</p>
-                </div>
-            </div>
-            
             <div class="row g-4">
                 <div class="col-md-6 col-lg-6">
                     <div class="card portfolio-item border-0 overflow-hidden">
@@ -284,32 +307,29 @@ Let’s connect and create something great together!</p>
                         <div class="swiper mySwiper1">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="https://i.ibb.co/C5RZ5LGw/IMG-20250504-WA0001.jpg" alt="Attendance System Screenshot 1"" border="0">
+                                    <img src="https://i.ibb.co/C5RZ5LG/IMG-20250504-WA0001.jpg" alt="Attendance System Screenshot 1">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://i.ibb.co/rKDFcTzg/IMG-20250504-WA0000.jpg" alt="Attendance system screen shot" border="0">
+                                    <img src="https://i.ibb.co/rKDFcTz/IMG-20250504-WA0000.jpg" alt="Attendance system screen shot">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://i.ibb.co/JjRW0S1M/IMG-20250504-WA0003.jpg" alt="IMG-20250504-WA0003" border="0">
+                                    <img src="https://i.ibb.co/JjRW0S1/IMG-20250504-WA0003.jpg" alt="IMG-20250504-WA0003">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://i.ibb.co/ynk7yS7b/IMG-20250504-WA0002.jpg" alt="IMG-20250504-WA0002" border="0">
+                                    <img src="https://i.ibb.co/ynk7yS7/IMG-20250504-WA0002.jpg" alt="IMG-20250504-WA0002">
                                 </div>
-                            
                                 <div class="swiper-slide">
                                     <img src="/api/placeholder/500/350" alt="Attendance System Screenshot 5">
                                 </div>
-                            
                                 <div class="swiper-slide">
                                     <img src="/api/placeholder/500/350" alt="Attendance System Screenshot 6">
                                 </div>
-                            
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                         </div>
-                        
+
                         <div class="card-body">
                             <h5 class="card-title">Smart Attendance System Using Face Recognition</h5>
                             <p class="card-text">The system enables automated attendance tracking using facial recognition technology, making attendance management efficient and reliable.</p>
@@ -326,14 +346,14 @@ Let’s connect and create something great together!</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-6">
                     <div class="card portfolio-item border-0 overflow-hidden">
                         <!-- Swiper Slider -->
                         <div class="swiper mySwiper2">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/6c1ktC9k/Screenshot-2025-0506-181251.jpg" alt="portfolio website photo " border="0"></a>
+                                    <img src="https://i.ibb.co/6c1ktC9/Screenshot-2025-0506-181251.jpg" alt="Portfolio Website Screenshot 1">
                                 </div>
                                 <div class="swiper-slide">
                                     <img src="/api/placeholder/500/350" alt="Portfolio Website Screenshot 2">
@@ -346,7 +366,7 @@ Let’s connect and create something great together!</p>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                         </div>
-                        
+
                         <div class="card-body">
                             <h5 class="card-title">Personal Portfolio Website</h5>
                             <p class="card-text">A professional website to showcase my technical skills, projects, and experience in web development.</p>

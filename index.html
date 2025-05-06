@@ -11,31 +11,8 @@
     <!-- Swiper CSS for Image Slider -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css" rel="stylesheet">
     <style>
-        /* Custom Styles */
-        :root {
-            --primary-color: #0d6efd;
-            --secondary-color: #6c757d;
-            --dark-color: #212529;
-            --light-color: #f8f9fa;
-            --bg-light: #f0f2f5;
-            --text-color: #212529;
-            --card-bg: #ffffff;
-            --card-border: rgba(0, 0, 0, 0.1);
-            --hero-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
+       
         
-        /* Dark Mode Variables */
-        [data-theme="dark"] {
-            --primary-color: #3d8bfd;
-            --secondary-color: #adb5bd;
-            --dark-color: #121212;
-            --light-color: #343a40;
-            --bg-light: #1e2125;
-            --text-color: #f8f9fa;
-            --card-bg: #2c3034;
-            --card-border: rgba(255, 255, 255, 0.1);
-            --hero-bg: linear-gradient(135deg, #121212 0%, #2c3034 100%);
-        }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -122,13 +99,7 @@
             background-color: var(--dark-color);
         }
         
-        /* Theme toggle */
-        .theme-toggle {
-            cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
+        
         
         /* Animation utilities */
         .animate-on-scroll {
@@ -700,12 +671,7 @@ Let's connect and create something great together!</p>
         </div>
     </div>
 
-    <!-- Theme toggle switch -->
-    <div class="position-fixed bottom-0 end-0 p-3">
-        <button id="themeToggle" class="btn btn-primary rounded-circle shadow">
-            <i class="bi bi-moon-fill"></i>
-        </button>
-    </div>
+  
 
     <!-- Scripts -->
     <!-- Bootstrap JS Bundle with Popper -->
@@ -767,35 +733,9 @@ Let's connect and create something great together!</p>
                 target: '#navbar'
             });
             
-            // Theme toggler
-            const themeToggle = document.getElementById('themeToggle');
-            const body = document.body;
-            const icon = themeToggle.querySelector('i');
             
-            // Check local storage for theme preference
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            body.setAttribute('data-theme', currentTheme);
-            updateThemeIcon(currentTheme);
             
-            themeToggle.addEventListener('click', function() {
-                const currentTheme = body.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                body.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateThemeIcon(newTheme);
-            });
             
-            function updateThemeIcon(theme) {
-                if (theme === 'dark') {
-                    icon.classList.remove('bi-moon-fill');
-                    icon.classList.add('bi-sun-fill');
-                } else {
-                    icon.classList.remove('bi-sun-fill');
-                    icon.classList.add('bi-moon-fill');
-                }
-            }
-        });
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
